@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book a Room — Example Hotel</title>
+  <link rel="stylesheet" href="/assets/css/booking.css">
+</head>
+<body>
+  <main class="booking-container">
+    <h1>Book a Room</h1>
+    <p class="lead">Fill out the form below and we will confirm your booking.</p>
+
+    <form id="bookingForm" novalidate>
+      <div class="row">
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" required maxlength="100" />
+      </div>
+
+      <div class="row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+
+      <div class="row">
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel" inputmode="tel" />
+      </div>
+
+      <div class="row grid-2">
+        <div>
+          <label for="checkin">Check-in</label>
+          <input id="checkin" name="checkin" type="date" required />
+        </div>
+        <div>
+          <label for="checkout">Check-out</label>
+          <input id="checkout" name="checkout" type="date" required />
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="roomType">Room type</label>
+        <select id="roomType" name="roomType">
+          <option value="standard">Standard</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="presidential">Presidential</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="guests">Guests</label>
+        <input id="guests" name="guests" type="number" min="1" max="10" value="1" />
+      </div>
+
+      <div class="row">
+        <label for="message">Message (optional)</label>
+        <textarea id="message" name="message" rows="4" maxlength="1000"></textarea>
+      </div>
+
+      <div class="row actions">
+        <button type="submit" id="submitBtn">Request booking</button>
+        <div id="formMessage" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+
+    <p class="note">This demo submits to a sample serverless endpoint. Replace or secure the endpoint before using in production.</p>
+  </main>
+
+  <script src="/assets/js/booking.js" defer></script>
+</body>
+</html>
