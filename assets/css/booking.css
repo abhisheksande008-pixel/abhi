@@ -1,0 +1,40 @@
+/* Responsive booking form styles */
+:root{
+  --brand:#007bff;
+  --bg:#ffffff;
+  --muted:#666;
+  --radius:8px;
+  --max-width:980px;
+}
+
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:#222;margin:0;padding:20px;display:flex;justify-content:center}
+.booking-container{width:100%;max-width:var(--max-width);background:#fff;border:1px solid #eee;border-radius:12px;padding:28px;box-shadow:0 6px 18px rgba(20,20,20,0.05)}
+.booking-container h1{margin:0 0 8px;font-size:1.6rem}
+.lead{color:var(--muted);margin:0 0 18px}
+form{display:block}
+.row{margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+.row label{font-weight:600;font-size:0.95rem}
+.row input[type="text"],
+.row input[type="email"],
+.row input[type="tel"],
+.row input[type="date"],
+.row input[type="number"],
+.row select,
+.row textarea{
+  padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:1rem;background:#fafafa
+}
+.row textarea{resize:vertical}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.actions{display:flex;gap:12px;align-items:center}
+button[type="submit"]{background:var(--brand);color:#fff;border:0;padding:10px 16px;border-radius:8px;font-weight:600;cursor:pointer}
+button[disabled]{opacity:0.6;cursor:not-allowed}
+#formMessage{font-size:0.95rem;color:var(--muted)}
+.note{margin-top:14px;font-size:0.9rem;color:var(--muted)}
+.error{border-color:#d9534f;box-shadow:0 0 0 3px rgba(217,83,79,0.06)}
+.success{border-color:#28a745;box-shadow:0 0 0 3px rgba(40,167,69,0.06)}
+@media (max-width:720px){
+  .grid-2{grid-template-columns:1fr}
+  body{padding:12px}
+  .booking-container{padding:18px}
+}
